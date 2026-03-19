@@ -1,0 +1,77 @@
+/* src/index.css */
+:root {
+  --primary-color: #0056b3;
+  --primary-hover: #004494;
+  --bg-color: #f0f4f8;
+  --text-color: #1a202c;
+  --danger-color: #e53e3e;
+  --success-color: #38a169;
+  --gray-light: #e2e8f0;
+  --gray-dark: #4a5568;
+  --border-radius: 12px;
+  
+  --font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  /* Disable pull-to-refresh on mobile iOS */
+  overscroll-behavior-y: none;
+  /* Disable text selection context menus */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Base utility classes for PWA fullscreen app */
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  /* Handle safe areas for iOS */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: var(--border-radius);
+  transition: transform 0.1s ease-in-out, background-color 0.15s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.text-center { text-align: center; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.space-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.flex-1 { flex: 1; }
+.h-full { height: 100%; }
+.w-full { width: 100%; }
+
+/* Large Text for Readability */
+.text-xl { font-size: 1.5rem; }
+.text-2xl { font-size: 2rem; }
+.text-3xl { font-size: 3rem; }
+.text-4xl { font-size: 4rem; }
+.text-5xl { font-size: 6rem; }
+.font-bold { font-weight: bold; }
