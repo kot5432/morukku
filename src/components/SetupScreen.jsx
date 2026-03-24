@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button } from './Button';
 
 export function SetupScreen({ onStart }) {
-    const [team1, setTeam1] = useState('〇〇');
-    const [team2, setTeam2] = useState('△△');
+    const [team1, setTeam1] = useState('');
+    const [team2, setTeam2] = useState('');
 
     return (
         <div className="flex flex-col h-full items-center justify-center p-4" style={{ padding: '20px' }}>
@@ -14,6 +14,7 @@ export function SetupScreen({ onStart }) {
                     <label className="font-bold text-xl" style={{ marginBottom: '0.5rem' }}>先攻チーム名</label>
                     <input
                         type="text"
+                        placeholder="ここをタップして入力"
                         value={team1}
                         onChange={e => setTeam1(e.target.value)}
                         style={{
@@ -31,6 +32,7 @@ export function SetupScreen({ onStart }) {
                     <label className="font-bold text-xl" style={{ marginBottom: '0.5rem' }}>後攻チーム名</label>
                     <input
                         type="text"
+                        placeholder="ここをタップして入力"
                         value={team2}
                         onChange={e => setTeam2(e.target.value)}
                         style={{
