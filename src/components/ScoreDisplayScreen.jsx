@@ -3,11 +3,17 @@ import React from 'react';
 export function ScoreDisplayScreen({ game }) {
     const team1 = game.teams[0];
     const team2 = game.teams[1];
+    const currentTurnCount = game.history.filter(h => h.currentSet === game.currentSet && h.status === 'playing').length + 1;
 
     return (
         <div className="flex flex-col h-full w-full justify-center items-center" style={{ padding: '20px' }}>
-            <div className="text-2xl font-bold" style={{ color: 'var(--gray-dark)', marginBottom: '10px' }}>
-                第{game.currentSet}セット
+            <div className="flex-col items-center" style={{ display: 'flex', marginBottom: '10px' }}>
+                <div className="text-2xl font-bold" style={{ color: 'var(--gray-dark)' }}>
+                    第{game.currentSet}セット
+                </div>
+                <div className="text-lg font-bold" style={{ color: 'var(--gray-dark)' }}>
+                    {currentTurnCount}ターン目
+                </div>
             </div>
 
             <div className="flex w-full space-between items-center flex-1" style={{ maxWidth: '800px', margin: '0 auto' }}>

@@ -4,11 +4,15 @@ import { Button } from './Button';
 export function ScoreInputScreen({ game, onScore, onUndo }) {
     const currentTeam = game.teams.find(t => t.id === game.currentTurnId);
     const otherTeam = game.teams.find(t => t.id !== game.currentTurnId);
+    const currentTurnCount = game.history.filter(h => h.currentSet === game.currentSet && h.status === 'playing').length + 1;
 
     return (
         <div className="flex flex-col h-full w-full" style={{ padding: '10px 20px' }}>
             <div className="flex space-between items-center w-full" style={{ marginBottom: '5px' }}>
-                <div className="text-xl font-bold">第{game.currentSet}セット</div>
+                <div className="flex-col" style={{ display: 'flex' }}>
+                    <div className="text-xl font-bold">第{game.currentSet}セット</div>
+                    <div className="text-sm font-bold" style={{ color: 'var(--gray-dark)' }}>{currentTurnCount}ターン目</div>
+                </div>
                 <Button variant="outline" onClick={onUndo} disabled={game.history.length === 0} style={{ padding: '6px 12px', fontSize: '1rem' }}>
                     1手戻る
                 </Button>
