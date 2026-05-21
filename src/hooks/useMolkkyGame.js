@@ -54,8 +54,11 @@ export function useMolkkyGame() {
                 nextStatus = 'set_finished';
             }
 
-            // 失格判定
+            // 3回ミスで相手チームが50点となりセット勝利
             if (team.misses >= 3) {
+                team.score = 0;
+                team.misses = 0;
+                otherTeam.score = 50;
                 otherTeam.setsWon += 1;
                 nextStatus = 'set_finished';
             }
