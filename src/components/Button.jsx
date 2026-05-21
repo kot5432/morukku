@@ -26,7 +26,7 @@ export function Button({
         danger: { backgroundColor: '#e53e3e', color: 'white' },
         success: { backgroundColor: '#38a169', color: 'white' },
         outline: { backgroundColor: 'transparent', color: '#0056b3', border: '2px solid #0056b3' },
-        keypad: { backgroundColor: '#e2e8f0', color: '#1a202c', fontSize: '2.5rem', padding: '24px' },
+        keypad: { backgroundColor: '#e2e8f0', color: '#1a202c', fontSize: '1.5rem', padding: '16px' },
     };
 
     const style = { ...baseStyle, ...variants[variant] };
